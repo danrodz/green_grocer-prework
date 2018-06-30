@@ -12,16 +12,16 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  coupons.each do |coupon|
-   product = coupon[:item]
-   if cart[product] && cart[product][:count] >= coupon[:num]
-     if cart["#{name} W/COUPON"]
-       cart["#{name} W/COUPON"][:count] += 1
-    else
-      
-    end
-  end
-  cart
+coupons.each do |coupon|
+product = coupon[:item]
+if cart[product] && cart[product][:count] >= coupon[:num]
+if cart["#{name} W/COUPON"]
+cart["#{name} W/COUPON"][:count] += 1
+else
+
+end
+end
+cart
 end
 
 def apply_coupons(cart, coupons)
