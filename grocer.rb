@@ -1,19 +1,17 @@
 def consolidate_cart(cart)
   # code here
-  cart.each_with_object({}) do |item, result|
-    products.each do |product, product_hash|
-      if !consolidated_cart.has_key?(product)
-        consolidated_cart[product] = {
-          price: 0.0,
-          clearance: false,
-          count: 1
-        }
-      else
-        consolidated_cart[product][:count] += 1
-      end
-      product_hash.each do |key, value|
-        consolidated_cart[product][key] = value
-      end
+  cart.each_with_object({}) do |product, product_hash|
+    if !consolidated_cart.has_key?(product)
+      consolidated_cart[product] = {
+        price: 0.0,
+        clearance: false,
+        count: 1
+      }
+    else
+      consolidated_cart[product][:count] += 1
+    end
+    product_hash.each do |key, value|
+      consolidated_cart[product][key] = value
     end
   end
 end
