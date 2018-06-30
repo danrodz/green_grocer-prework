@@ -5,7 +5,7 @@ def consolidate_cart(cart)
       if product_hash[product]
         attributes[:count] += 1
       else
-        
+        attributes[]
       end
     end
   end
