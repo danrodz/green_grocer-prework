@@ -6,7 +6,7 @@ def consolidate_cart(cart)
         attributes[:count] += 1
       else
         attributes[:count] = 1
-        product_hash[]
+        product_hash[product] = 
       end
     end
   end
