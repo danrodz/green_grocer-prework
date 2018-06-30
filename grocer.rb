@@ -2,7 +2,9 @@ def consolidate_cart(cart)
   # code here
   cart.each_with_object({}) do |products, product_hash|
     products.each do |product, attributes|
-      if product_hash[product]  
+      if product_hash[product]
+        attributes
+      end
     end
   end
 end
