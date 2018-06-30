@@ -1,7 +1,7 @@
 def consolidate_cart(cart)
   # code here
   cart.each_with_object({}) do |product, product_hash|
-    if !consolidated_cart.has_key?(product)
+    product.each do 
       consolidated_cart[product] = {
         price: 0.0,
         clearance: false,
