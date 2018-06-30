@@ -1,6 +1,6 @@
 def consolidate_cart(cart)
   # code here
-  cart.each_with_object({}) do |products|
+  cart.each_with_object({}) do |item, result|
     products.each do |product, product_hash|
       if !consolidated_cart.has_key?(product)
         consolidated_cart[product] = {
