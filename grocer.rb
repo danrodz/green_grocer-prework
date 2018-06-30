@@ -2,16 +2,7 @@ def consolidate_cart(cart)
   # code here
   cart.each_with_object({}) do |products, product_hash|
     products.each do |product, attributes|
-      consolidated_cart[product] = {
-        price: 0.0,
-        clearance: false,
-        count: 1
-      }
-    else
-      consolidated_cart[product][:count] += 1
-    end
-    product_hash.each do |key, value|
-      consolidated_cart[product][key] = value
+        
     end
   end
 end
