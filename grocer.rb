@@ -3,7 +3,7 @@ def consolidate_cart(cart)
   cart.each_with_object({}) do |products, product_hash|
     products.each do |product, attributes|
       if product_hash[product]
-        attributes
+        attributes[:count]
       end
     end
   end
