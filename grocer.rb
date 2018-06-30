@@ -1,12 +1,12 @@
 def consolidate_cart(cart)
   # code here
   cart.each_with_object({}) do |products, product_hash|
-    products.each do |product, attributes|
+    products.each do |product, keys|
       if product_hash[product]
-        attributes[:count] += 1
+        keys[:count] += 1
       else
-        attributes[:count] = 1
-        product_hash[product] = 
+        keys[:count] = 1
+        product_hash[product] = keys
       end
     end
   end
