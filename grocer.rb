@@ -1,5 +1,4 @@
 def consolidate_cart(cart)
-  # code here
   cart.each_with_object({}) do |products, product_hash|
     products.each do |product, keys|
       if product_hash[product]
@@ -13,21 +12,12 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  products_with_coupons = {}
-  coupons.each do |coupon_hash|
-    cart.each do |product, product_hash|
-      if product == product_hash[:item] && product_hash[:count] >= coupon_hash[:num]
-        product_hash[:count] = product_hash[:count] - coupon_hash[:num]
-        new_product = coupon_hash[:item] + " w/coupon"
-        products_with_coupons[new_product] = {
-          price: coupon_hash[:cost],
-          count: 1,
-          clearance: product_hash[:clearance]
-        }
-      end
-    end
+  coupons.each do |coupon|
+   product = coupon[:item]
+   if cart[product] && cart[product][:count] >= coupon[:num]
+     if cart["#{name} W"]
   end
-  cart.merge(products_with_coupons)
+  cart
 end
 
 def apply_coupons(cart, coupons)
